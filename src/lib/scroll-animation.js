@@ -1,11 +1,11 @@
 import { gsap } from "gsap";
 
-export const scrollAnimation=(position,target,onUpdate)=>{
+export const scrollAnimation=(position,target,isMobile,onUpdate)=>{
     const tl=gsap.timeline();
     tl.to(position,{
-        x:-1.38,
-        y:-10.74,
-        z:-6.93,
+        x:isMobile?-7.0:-1.38,
+        y:isMobile?-12.2:-10.74,
+        z:isMobile?-6.0:-6.93,
         scrollTrigger:{
             trigger:".sound-section",
             start:"top bottom",
@@ -14,6 +14,11 @@ export const scrollAnimation=(position,target,onUpdate)=>{
             immediateRender:false
         },
         onUpdate
+    })
+    .to(target,{
+        x:isMobile?0.7:1.52,
+        y:isMobile?1.9:0.77,
+        z:isMobile?0.7:1.08
     })
     .to(".jumbotron-section",{
         opacity:0,
@@ -36,9 +41,9 @@ export const scrollAnimation=(position,target,onUpdate)=>{
         },
     })
     .to(position,{
-        x:1.56,
-        y:5,
-        z:0.011,
+        x:isMobile?9.56:1.56,
+        y:isMobile?10.95:5,
+        z:isMobile?0.09: 0.011,
         scrollTrigger:{
             trigger:".display-section",
             start:"top bottom",
@@ -49,9 +54,9 @@ export const scrollAnimation=(position,target,onUpdate)=>{
         onUpdate
     })
     .to(target,{
-        x:-0.55,
-        y:0.32,
-        z:0.0,
+        x:isMobile?-1.62:-0.55,
+        y:isMobile?0.2: 0.32,
+        z:isMobile?-0.6: 0.0,
         scrollTrigger:{
             trigger:".display-section",
             start:"top bottom",

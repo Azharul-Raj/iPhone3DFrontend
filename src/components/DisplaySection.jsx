@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function DisplaySection() {
+export default function DisplaySection({triggerPreview}) {
   const scrollToTop=()=>{
     window.scrollTo({top:0,left:0,behavior:"smooth"})
   }
@@ -13,7 +13,7 @@ export default function DisplaySection() {
         <span className="description">
             A display that's up to 2x in the sun
         </span>
-        <button className="button">Try me</button>
+        <button className="button" onClick={triggerPreview}>Try me</button>
         <button className="back-button" onClick={scrollToTop}>Top</button>
     </div>
   )
