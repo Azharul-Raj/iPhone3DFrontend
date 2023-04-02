@@ -1,6 +1,9 @@
 import React from 'react'
 
 export default function DisplaySection() {
+  const scrollToTop=()=>{
+    window.scrollTo({top:0,left:0,behavior:"smooth"})
+  }
   return (
     <div className="display-section wrapper">
         <h2 className="title">
@@ -11,7 +14,7 @@ export default function DisplaySection() {
             A display that's up to 2x in the sun
         </span>
         <button className="button">Try me</button>
-        <button className="back-button">Top</button>
+        <button className="back-button" onClick={scrollToTop}>Top</button>
     </div>
   )
 }
