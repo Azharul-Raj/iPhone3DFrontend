@@ -41,7 +41,7 @@ export const scrollAnimation=(position,target,isMobile,onUpdate)=>{
         },
     })
     .to(position,{
-        x:isMobile?9.56:1.56,
+        x:isMobile?20.56:1.56,
         y:isMobile?10.95:5,
         z:isMobile?0.09: 0.011,
         scrollTrigger:{
